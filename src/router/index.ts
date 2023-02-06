@@ -1,23 +1,33 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import SalaView from '../views/sala/SalaView.vue';
+import CuinaView from '../views/cuina/CuinaView.vue';
+import CartaView from '../views/carta/CartaView.vue';
+import TreballadorsView from '../views/treballadors/TreballadorsView.vue';
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+    // Cada una d'aquestes es una de les pàgines de la app
     {
-        path: '/',
-        name: 'home',
-        component: HomeView,
+        path: '/sala',
+        name: 'sala',
+        component: SalaView,
     },
     {
-        path: '/about',
-        name: 'about',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+        path: '/cuina',
+        name: 'cuina',
+        component: CuinaView,
+    },
+    {
+        path: '/carta',
+        name: 'carta',
+        component: CartaView,
+    },
+    {
+        path: '/treballadors',
+        name: 'treballadors',
+        component: TreballadorsView,
     },
 ];
 

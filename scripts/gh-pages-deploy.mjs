@@ -19,8 +19,8 @@ import { existsSync } from 'fs';
         ]);
         console.log('Pushing to gh-pages...');
         await execa('git', ['push', 'origin', 'HEAD:gh-pages', '--force']);
-        await execa('rd', ['/s /q', folderName]);
-        await execa('git', ['checkout', '-f', 'master']);
+        await execa('npm', ['run', 'rimraf', folderName]);
+        await execa('git', ['checkout', '-f', 'main']);
         await execa('git', ['branch', '-D', 'gh-pages']);
         console.log('Successfully deployed, check your settings');
     } catch (e) {
